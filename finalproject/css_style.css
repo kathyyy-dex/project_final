@@ -1,0 +1,47 @@
+*{
+    margin:0; 
+    padding:0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+
+
+body{
+    background-image: url(home-background.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.form {
+   width: 500px;
+   padding: 6px;
+}
+
+
+input, textarea {
+    width: 100%;
+    padding: 6px;
+    outline: none;
+    border: none;
+    margin: 6px 0px;
+
+}
+
+#btn {
+    width: 150px;
+    padding: 6px;
+    cursor: pointer;
+}
+
+@media (max-width: 480px){
+    form .half{
+        flex-direction: column;
+    }
+    form .half .item, form .action input{
+        width: 100%;
+    }
+}
+}

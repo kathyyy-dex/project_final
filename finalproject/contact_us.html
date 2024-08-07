@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="css_style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <style>
+        body{
+            background-image: url(home-background.jpg);
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+
+    <div class="form">
+        <form method="post">
+            <input type="text" placeholder="Name" id="Name" autocomplete="off">
+            <input type="email" placeholder="email" id="email" autocomplete="off">
+            <input type="number" placeholder="number" id="number" autocomplete="off">
+            <textarea id="message" cols="30" rows="10" placeholder="message"></textarea>
+            <button id="btn">Send</button> 
+        </form>
+    </div>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <script>
+        var btn = document.getElementById('btn');
+        btn.addEventListener('click', function(e){
+            e.preventDefault()
+            var name = document.getElementById('Name').value;
+            var email = document.getElementById('email').value;
+            var number = document.getElementById('number').value;
+            var message = document.getElementById('message').value;
+            var body = 'name: ' +name + '<br/> email: ' +email + '<br/> number: ' +number + '<br/> message: ' +message;
+
+            Email.send({
+                Host: "smtp.gmail.com",
+                Username: "kathlyn.guivencan1104@gmail.com",
+                Password: "femgrphlvdqqhdpz", // Use your App Password here
+                To: 'kathlyn.guivencan1104@gmail.com',
+                From: email,
+                Subject: number,
+                Body: body,
+                TLS: true // Add this option for secure connection
+            }).then(
+                message => alert(message)
+            );
+        })
+    </script>
+</body>
+</html>
